@@ -5,15 +5,13 @@
     <parent>
         <groupId>cn.com.denny</groupId>
         <artifactId>sargeras</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
+        <version>1.0-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     <groupId>cn.com.denny</groupId>
     <artifactId>sargeras-boot</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <packaging>jar</packaging>
+    <version>1.0-SNAPSHOT</version>
     <name>sargeras-boot</name>
-    <description>configuration for start</description>
 
     <properties>
         <java.version>1.8</java.version>
@@ -27,12 +25,22 @@
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>cn.com.denny</groupId>
+            <artifactId>sargeras-mongodb</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>cn.com.denny</groupId>
+            <artifactId>sargeras-graphql</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>cn.com.denny</groupId>
+            <artifactId>sargeras-javase</artifactId>
         </dependency>
     </dependencies>
 
@@ -40,10 +48,25 @@
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
+                <!-- http://docs.spring.io/spring-boot/docs/current/maven-plugin/usage.html -->
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <!-- the target directory in workspace is where the fat jar deploy -->
+                    <outputDirectory>../target</outputDirectory>
+                    <classifier>executable</classifier>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
+
+
 
 
 </project>
