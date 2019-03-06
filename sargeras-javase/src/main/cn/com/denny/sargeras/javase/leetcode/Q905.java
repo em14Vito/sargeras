@@ -55,6 +55,21 @@ public class Q905 {
         return result;
     }
 
+    public int[] sortArrayByParity_self_1(int[] A) {
+        int[] result = new int[A.length];
+        int i = 0,j = A.length -1;
+
+        for (int item : A) {
+            if (item % 2 == 0) {
+                //even
+                result[i++] = item;
+            } else {
+                result[j--] = item;
+            }
+        }
+        return result;
+    }
+
     /**
      * sort way by online
      *
@@ -72,9 +87,8 @@ public class Q905 {
 
 
     public static void main(String[] args) {
-        int[] aa = new Q905().sortArrayByParity(new int[]{1, 0});
+        int[] aa = new Q905().sortArrayByParity_self_1(new int[]{3,1,2,4});
         System.out.println(aa);
-        new BigDecimal("12399.111").multiply(new BigDecimal(100));
     }
 
 }
