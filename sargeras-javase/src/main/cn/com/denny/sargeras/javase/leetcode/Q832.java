@@ -27,7 +27,7 @@ public class Q832 {
     public int[][] flipAndInvertImage(int[][] A) {
 
         for (int i = 0; i < A.length; i++) {
-            int right = A[i].length;
+            int  right = A[i].length;
             for (int j = 0; j < A[i].length; j++) {
                 A[i][j] = ((A[i][j] ^ A[i][right - 1]) == 0 ? A[i][j] : 1);
                 System.out.print(A[i][j]);
