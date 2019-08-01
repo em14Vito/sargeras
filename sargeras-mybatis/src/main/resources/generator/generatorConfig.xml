@@ -15,7 +15,7 @@
             <property name="suppressAllComments" value="false"/>
         </commentGenerator>
         <!--数据库链接URL，用户名、密码 -->
-        <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://127.0.0.1/sargeras"
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://127.0.0.1/sargeras?useSSL=false"
                         userId="root" password="123456">
         </jdbcConnection>
         <!-- 默认false，把JDBC DECIMAL 和 NUMERIC 类型解析为 Integer，为 true时把JDBC DECIMAL 和 NUMERIC 类型解析为java.math.BigDecimal -->
@@ -23,27 +23,27 @@
             <property name="forceBigDecimals" value="true"/>
         </javaTypeResolver>
         <!-- targetProject:生成PO类的位置 -->
-        <javaModelGenerator targetPackage="cn.ljaer.ssm.po"
-                            targetProject="src\main\java">
+        <javaModelGenerator targetPackage="cn.com.denny.sargeras.mybatis.mapper"
+                            targetProject="src/main/java">
             <!-- enableSubPackages:是否让schema作为包的后缀 -->
             <property name="enableSubPackages" value="false"/>
             <!-- 从数据库返回的值被清理前后的空格 -->
             <property name="trimStrings" value="true"/>
         </javaModelGenerator>
         <!-- targetProject:mapper映射文件生成的位置 -->
-        <sqlMapGenerator targetPackage="cn.ljaer.ssm.mapper"
-                         targetProject="src\main\resources">
+        <sqlMapGenerator targetPackage="mapper"
+                         targetProject="src/main/resources">
             <!-- enableSubPackages:是否让schema作为包的后缀 -->
             <property name="enableSubPackages" value="false"/>
         </sqlMapGenerator>
         <!-- targetPackage：mapper接口生成的位置 -->
-        <javaClientGenerator type="XMLMAPPER" targetPackage="cn.ljaer.ssm.mapper"
-                             targetProject="src\main\java">
+        <javaClientGenerator type="XMLMAPPER" targetPackage="cn.com.denny.sargeras.mybatis.mapper"
+                             targetProject="src/main/java">
             <!-- enableSubPackages:是否让schema作为包的后缀 -->
             <property name="enableSubPackages" value="false"/>
         </javaClientGenerator>
         <!-- 指定数据库表 -->
-        <table tableName="user"></table>
+        <table tableName="variate"></table>
 
     </context>
 </generatorConfiguration>

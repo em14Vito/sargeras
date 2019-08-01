@@ -1,25 +1,17 @@
-/target/
-!.mvn/wrapper/maven-wrapper.jar
-
-### STS ###
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings
-.springBeans
-.sts4-cache
-
-### IntelliJ IDEA ###
-.idea
-*.iws
+# exclude everything except directory /.idea
+**/.idea/*
+# exclude log files
+**/logs/*
+**/carrier_logs/*
+log.txt
+# exclue idea config files
 *.iml
-*.ipr
+# exclue target dir
+**/target/*
 
-### NetBeans ###
-/nbproject/private/
-/build/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
+#exclue class files
+**/classes/*
+
+**/*.classpath
+**/*.project
+**/.settings/*
